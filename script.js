@@ -12,3 +12,12 @@ function inserirConta() {
 
     console.log(contas);
 }
+
+function verificacaoConta(a) {
+    
+}
+function transferir() {
+    let contaOrigem = parseInt(prompt("Informe o codigo sua conta"));
+    let contaDestino = parseInt(prompt("Informe o código da conta que deseja transferir!"));
+    let valorTransferencia = parseFloat(prompt("Informe o valor que deseja transferir"));
+}
