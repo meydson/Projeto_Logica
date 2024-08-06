@@ -5,7 +5,6 @@ let contas = Array();
     contas[3] = [4, "Courtney Love", "06/06/1986", "81789456123", 1000];
 let contador = contas.length;
 
-
 function inserirConta() {
     contas.push(Array());
     contas[contador][0] = contador+1;
@@ -37,11 +36,13 @@ function transferir() {
         alert("conta origem invalida");
     } else if (verificacaoConta(contaDestino) == false) {
         alert("conta destinho inválida")
-    } else if (valorTransferencia > contas[contaOrigem][4]) {
+    } else if (valorTransferencia > contas[contaOrigem-1][4]) {
         alert("saldo insuficiente")
     } else {
         contas[contaOrigem-1][4] -= valorTransferencia;
-        console.log(contas[contaOrigem-1])
+        console.log(contas[contaOrigem-1]);
+        contas[contaDestino-1][4] += valorTransferencia;
+        console.log(contas[contaDestino-1]);
     }
 
     console.log(verificacaoConta(contaOrigem))
