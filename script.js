@@ -33,20 +33,19 @@ function transferir() {
     let valorTransferencia = parseFloat(prompt("Informe o valor que deseja transferir"));
     
     if (verificacaoConta(contaOrigem) == false) {
-        alert("conta origem invalida");
+        alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Conta de origem inválida, favor verificar e refazer a transferência");
     } else if (verificacaoConta(contaDestino) == false) {
-        alert("conta destinho inválida")
+        alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Conta de destino inválida, favor verificar e refazer a transferência")
     } else if (valorTransferencia > contas[contaOrigem-1][4]) {
-        alert("saldo insuficiente")
+        alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Saldo insuficiente, favor verificar e refazer a transferência")
     } else {
         contas[contaOrigem-1][4] -= valorTransferencia;
         console.log(contas[contaOrigem-1]);
         contas[contaDestino-1][4] += valorTransferencia;
         console.log(contas[contaDestino-1]);
+        alert("Transferência de R$ "+ valorTransferencia +" concluída com sucesso para o usuário " + contas[contaDestino-1][1])
     }
 
-    console.log(verificacaoConta(contaOrigem))
-    console.log(verificacaoConta(contaDestino))
-
-    //console.log(verificador)
+    //console.log(verificacaoConta(contaOrigem));
+    //console.log(verificacaoConta(contaDestino));
 }
