@@ -27,6 +27,14 @@ function verificacaoConta(a) {
     return verificador;
 }
 
+function validarSaldo(a,b) {
+    let verificador2 = false;
+    if (a > contas[b-1][4]) {
+        verificador2 = true;
+    }
+    return verificador2;
+}
+
 function transferir() {
     let contaOrigem = parseInt(prompt("Informe o codigo sua conta"));
     let contaDestino = parseInt(prompt("Informe o código da conta que deseja transferir!"));
@@ -36,7 +44,7 @@ function transferir() {
         alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Conta de origem inválida, favor verificar e refazer a transferência");
     } else if (verificacaoConta(contaDestino) == false) {
         alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Conta de destino inválida, favor verificar e refazer a transferência")
-    } else if (valorTransferencia > contas[contaOrigem-1][4]) {
+    } else if (validarSaldo(valorTransferencia, contaOrigem) == true) {
         alert("TRANSFERÊNCIA NÃO CONCLUÍDA! Saldo insuficiente, favor verificar e refazer a transferência")
     } else {
         contas[contaOrigem-1][4] -= valorTransferencia;
