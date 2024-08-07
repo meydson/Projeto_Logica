@@ -49,3 +49,15 @@ function transferir() {
     //console.log(verificacaoConta(contaOrigem));
     //console.log(verificacaoConta(contaDestino));
 }
+
+function remover() {
+    let removerConta = parseInt(prompt('Digite o número da conta a ser removida'))
+    console.log(verificacaoConta(removerConta))
+    //removerConta = removerConta-1
+
+    if (verificacaoConta(removerConta) == true) {
+        contas[removerConta-1] = ['Conta removida']
+        console.log(contas)
+
+    }
+}
