@@ -85,7 +85,7 @@ function debitar() {
         } else {
             contas[debitarConta-1][4] =   contas[debitarConta-1][4]-valorDebito
             alert('Valor foi debitado')
-            alert(contas[debitarConta])
+            alert(contas[debitarConta-1])
         }
     }
 }
