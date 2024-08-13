@@ -69,3 +69,23 @@ function remover() {
 
     }
 }
+
+function debitar() {
+    let debitarConta = parseInt(prompt('Insira o número da conta para debitar'))
+    
+    if (verificacaoConta(debitarConta) == false) {
+        alert('Essa conta não existe')
+
+    } else {
+        let valorDebito = parseFloat(prompt('Insira o valor a ser debitado'))
+        if (validarSaldo(valorDebito,debitarConta) == true) {
+            alert('Saldo insuficiente')
+
+
+        } else {
+            contas[debitarConta-1][4] =   contas[debitarConta-1][4]-valorDebito
+            alert('Valor foi debitado')
+            alert(contas[debitarConta-1])
+        }
+    }
+}
