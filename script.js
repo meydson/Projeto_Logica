@@ -12,3 +12,11 @@ function inserirConta() {
 
     console.log(contas);
 }
+
+function exibirConta(){ 
+        
+    let numConta = parseInt(prompt("Digite o número da conta:"))
+   
+    alert(contas[numConta -1])
+        
+   }
